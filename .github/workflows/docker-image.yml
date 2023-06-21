@@ -1,0 +1,28 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CR_IMAGE_NAME: mm404/cups-avahi-airprint
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: ./build.sh $CR_IMAGE_NAME
+    - name: Test container
+      run: docker run ${{ env.CR_IMAGE_NAME }}:latest --version
+    - name: Log in to Docker hub
+      run: echo ${{ secrets.DOCKER_HUB_KEY }} | docker login -u ${{ secrets.DOCKER_HUB_USER }} --password-stdin
+    - name: Push image to Docker
+      if: github.event_name == 'push'
+      run: docker push -a $CR_IMAGE_NAME
