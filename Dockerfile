@@ -25,10 +25,9 @@ RUN apk add --no-cache --repository=https://dl-cdn.alpinelinux.org/alpine/edge/t
 	gutenprint-doc \
 	gutenprint-cups
 
+ADD requirements.txt .
 RUN pip3 install --no-cache-dir --upgrade pip && \
-	pip3 install --no-cache-dir pycups
-
-# pycups needs py3-pip build-base cups cups-dev python3-dev
+	pip3 install --no-cache-dir -r requirements.txt
 
 # This will use port 631
 EXPOSE 631
