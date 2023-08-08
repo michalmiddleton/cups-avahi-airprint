@@ -1,4 +1,4 @@
-FROM alpine:3.18.2
+FROM alpine:3.18.3
 
 # Upgrade Alpine, install stable Alpine packages, install Edge Alpine packages, install pycups
 ADD requirements.txt .
