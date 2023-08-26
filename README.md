@@ -1,11 +1,9 @@
-# michalmiddleton/cups-avahi-airprint
+# michalmiddleton/airprint-mfc9970cdw
 
-WIP. Goals - automated patching and build out on newest Alpine. Try and eliminate the need for net=host, restore multiarch builds
+Based on Debian, added i386 drivers for Brother MFC-9970CDW
 
 Fork from [chuckcharlie/cups-avahi-airprint](https://github.com/chuckcharlie/cups-avahi-airprint)
 Fork from [quadportnick/docker-cups-airprint](https://github.com/quadportnick/docker-cups-airprint)
-
-### Now supports ARM64 and AMD64!
 
 Use the *latest* or *version#* tags to auto choose the right architecture.
 Please test and let me know. I don't have anything at home to test ARM with.

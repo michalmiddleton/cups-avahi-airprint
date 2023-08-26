@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 env:
-  CR_IMAGE_NAME: mm404/cups-avahi-airprint
+  CR_IMAGE_NAME: mm404/airprint-mfc9970cdw
 
 jobs:
 
