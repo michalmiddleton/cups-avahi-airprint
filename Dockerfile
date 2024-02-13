@@ -1,4 +1,4 @@
-FROM debian:12.1
+FROM debian:12.5
 
 RUN apt-get update && \
 	apt-get dist-upgrade -y && \
